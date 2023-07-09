@@ -1,0 +1,33 @@
+/*
+  Stylesheet for navigation elements
+*/
+
+nav {
+  height: 120px;
+  background: #4056a1;
+  color: #ffffff;
+  padding: 0 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+}
+
+nav .new-tweet-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav .new-tweet-control p {
+  margin: 0;
+}
+
+nav .new-tweet-control i {
+  color: red;
+}
