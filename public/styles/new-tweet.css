@@ -1,0 +1,34 @@
+/*
+  Styles for new tweet form
+*/
+
+.new-tweet form textarea {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid;
+  resize: none;
+}
+
+.new-tweet form .form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-family: 'Bungee', cursive;
+}
+
+.new-tweet form button {
+  background: #4957a0;
+  color: #fff;
+  border: none;
+  padding: 7px 10px;
+}
+
+.new-tweet form button:hover {
+  cursor: pointer;
+  background-color: #d69521;
+}
+
+.new-tweet form .counter.negative {
+  color: red;
+}
