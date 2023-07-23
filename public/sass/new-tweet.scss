@@ -1,0 +1,57 @@
+/*
+  Styles for new tweet form
+*/
+
+.new-tweet {
+  display: none;
+  margin: 50px 15px;
+
+  &.visible {
+    display: block;
+  }
+
+  form {
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid;
+      resize: vertical;
+      padding-top: 10px;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-family: 'Bungee', cursive;
+    }
+
+    button {
+      background: #4957a0;
+      color: #fff;
+      border: none;
+      padding: 7px 10px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #d69521;
+      }
+    }
+
+    .counter {
+      &.negative {
+        color: red;
+      }
+    }
+  }
+
+  //new-tweet
+  @media (min-width:1024px) {
+    margin: 0 0 50px;
+  }
+}

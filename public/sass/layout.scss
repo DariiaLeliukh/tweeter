@@ -16,32 +16,32 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-@media (min-width: 1024px) {
-  main {
+
+  @media (min-width:1024px) {
     margin-top: 0;
     flex-direction: row;
     gap: 100px;
     padding: 0 1.5em;
   }
-}
-@media (min-width: 1440px) {
-  main {
+
+  @media (min-width:1440px) {
     max-width: 1368px;
     padding: 0;
   }

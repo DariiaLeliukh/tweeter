@@ -1,9 +1,19 @@
 /*
   Styles for all tweet container and individual tweets
 */
+@media (min-width: 1024px) {
+  .tweet-container {
+    margin: 170px 0 50px;
+  }
+}
 
 .all-tweets {
   margin: 50px 15px;
+}
+@media (min-width: 1024px) {
+  .all-tweets {
+    margin: 0;
+  }
 }
 
 .tweet {
@@ -14,12 +24,16 @@
   flex-direction: column;
   gap: 30px;
 }
-
+@media (min-width: 1024px) {
+  .tweet {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
 .tweet:hover {
   box-shadow: 12px 8px #dedada;
   cursor: pointer;
 }
-
 .tweet header {
   height: auto;
   padding: 10px 20px;
@@ -31,27 +45,27 @@
   padding: 0;
   gap: 15px;
 }
-
+@media (min-width: 576px) {
+  .tweet header {
+    flex-direction: row;
+  }
+}
 .tweet header .photo-name {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 15px;
 }
-
 .tweet header .photo-name .profile-photo img {
   width: 50px;
   height: 50px;
 }
-
 .tweet header .profile-nickname {
   color: #b9b8b8;
 }
-
 .tweet .body {
   overflow: hidden;
 }
-
 .tweet footer {
   display: flex;
   flex-direction: row;
@@ -60,34 +74,14 @@
   padding-top: 10px;
   font-size: 15px;
 }
-
 .tweet footer .tweet-actions {
   display: flex;
   gap: 10px;
 }
-
 .tweet footer i {
   color: #4957a0;
 }
-
 .tweet footer i:hover {
   cursor: pointer;
   color: #d69521;
-}
-
-@media (min-width: 576px) {
-  .tweet header {
-    flex-direction: row;
-  }
-}
-
-@media (min-width:1024px) {
-  .all-tweets {
-    margin: 170px 0 50px;
-  }
-
-  .all-tweets .tweet {
-    margin-top: 0;
-    margin-bottom: 30px;
-  }
 }

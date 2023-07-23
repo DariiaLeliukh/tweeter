@@ -62,19 +62,22 @@
         <h2>Dariia</h2>
       </div>
     </header>
-    <section class="new-tweet">
-      <form action="/tweets/" method="post" id="createNewTweet">
-        <label>What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="error"></div>
-        <div class="form-footer">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section class="all-tweets">
-    </section>
+    <div class="tweet-container">
+      <section class="new-tweet">
+        <form action="/tweets/" method="post" id="createNewTweet">
+          <label>What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="error"></div>
+          <div class="form-footer">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section class="all-tweets">
+      </section>
+    </div>
+
   </main>
 </body>
 
