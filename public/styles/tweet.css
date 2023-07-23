@@ -47,6 +47,10 @@
   color: #b9b8b8;
 }
 
+.tweet .body {
+  overflow: hidden;
+}
+
 .tweet footer {
   display: flex;
   flex-direction: row;

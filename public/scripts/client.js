@@ -4,11 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 function createTweetElement(data) {
-  var postDate = new Date(data.created_at);
-  var currentDate = new Date();
-
   const $tweet = $(`<article class="tweet">
   <header>
     <div class="photo-name">
@@ -27,7 +23,7 @@ function createTweetElement(data) {
   ${data.content.text}
   </div>
   <footer>
-    <div class="date"> ${postDate}</div>
+    <div class="date"> ${timeago.format(data.created_at)}</div>
     <div class="tweet-actions">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -45,39 +41,65 @@ const renderTweets = function(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 
+  $('.all-tweets').empty();
   tweets.forEach(element => {
     const $tweet = createTweetElement(element);
     $('.all-tweets').append($tweet);
   });
+};
+
+const loadTweets = () => {
+  $.ajax({
+    url: "/tweets",
+    type: "GET",
+    dataType: "json",
+    success: (result) => {
+      renderTweets(result);
+    },
+    error: (error) => {
+      console.error("An error occured, ", error);
+    },
+  });
+};
+
+const clearNewTweetText = function() {
+  let textArea = $("#createNewTweet textarea");
+  const counter = textArea.closest('form').children().find('.counter');
+  textArea[0].value = '';
+  counter[0].classList.remove('negative');
+  counter[0].value = 140;
+
+}
+
+const postTweet = function() {
+
+  let input = $("#createNewTweet textarea")[0].value;
+
+  if (input.length > 140) {
+    //$("<p>Too long</p>").prependTo("#createNewTweet .form-footer");
+    alert("Too long");
+  } else if (input.length === 0) {
+    //$("<p>Too short</p>").prependTo("createNewTweet .form-footer");
+    alert("Too short");
+  } else {
+    const data = $("#createNewTweet").serialize();
+
+    $.post("/tweets", data)
+      .then(() => {
+        clearNewTweetText();
+        loadTweets();
+      });
+  }
+
+
 }
 
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  loadTweets();
 
-  renderTweets(data);
+  $("#createNewTweet").on("submit", (event) => {
+    event.preventDefault();
+    postTweet();
+  });
 });
 

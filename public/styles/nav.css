@@ -18,6 +18,16 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+
 nav .new-tweet-control {
   display: flex;
   flex-direction: column;
