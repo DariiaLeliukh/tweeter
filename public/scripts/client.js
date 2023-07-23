@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escapeF = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 function createTweetElement(data) {
   const $tweet = $(`<article class="tweet">
   <header>
@@ -20,7 +26,7 @@ function createTweetElement(data) {
     </div>
   </header>
   <div class="body">
-  ${data.content.text}
+  ${escapeF(data.content.text)}
   </div>
   <footer>
     <div class="date"> ${timeago.format(data.created_at)}</div>
@@ -42,7 +48,7 @@ const renderTweets = function(tweets) {
   // takes return value and appends it to the tweets container
 
   $('.all-tweets').empty();
-  tweets.forEach(element => {
+  tweets.reverse().forEach(element => {
     const $tweet = createTweetElement(element);
     $('.all-tweets').append($tweet);
   });
@@ -77,11 +83,13 @@ const postTweet = function() {
 
   if (input.length > 140) {
     //$("<p>Too long</p>").prependTo("#createNewTweet .form-footer");
-    alert("Too long");
+    $('#createNewTweet .error')[0].innerText = "The tweet can not be more that 140 characters";
   } else if (input.length === 0) {
     //$("<p>Too short</p>").prependTo("createNewTweet .form-footer");
-    alert("Too short");
+    $('#createNewTweet .error')[0].innerText = "The tweet can not be empty";
+    //alert("Too short");
   } else {
+    $('#createNewTweet .error')[0].innerText = '';
     const data = $("#createNewTweet").serialize();
 
     $.post("/tweets", data)

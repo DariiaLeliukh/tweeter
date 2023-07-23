@@ -2,7 +2,7 @@
   Styles for main profile header
 */
 
-header {
+.main-header {
   height: 520px;
   padding-top: 120px;
   width: 100%;
@@ -13,4 +13,19 @@ header {
   align-items: center;
   justify-content: end;
   color: #fff;
+}
+
+@media (min-width:1024px) {
+  .main-header {
+    width: calc(50% - 100px);
+    float: left;
+    display: block;
+    margin: 170px 50px 50px;
+  }
+
+  .profile-photo-container,
+  .profile-name-container {
+    display: flex;
+    justify-content: center;
+  }
 }

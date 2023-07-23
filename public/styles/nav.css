@@ -4,7 +4,7 @@
 
 nav {
   height: 120px;
-  background: #4056a1;
+  background: transparent;
   color: #ffffff;
   padding: 0 1.5em;
   display: flex;
@@ -34,10 +34,51 @@ nav .new-tweet-control {
   align-items: center;
 }
 
+nav .new-tweet-control:hover {
+  cursor: pointer;
+}
+
+nav .new-tweet-control:hover i {
+  -webkit-animation: mover 0.5s infinite alternate;
+  animation: mover 0.5s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
+}
+
 nav .new-tweet-control p {
   margin: 0;
 }
 
 nav .new-tweet-control i {
   color: red;
+}
+
+@media (min-width:1024px) {
+  nav {
+    background: #4056a1;
+  }
+}
+
+@media (min-width:1440px) {
+  nav {
+    padding: 1.5em calc((100% - 1368px)/2);
+  }
 }

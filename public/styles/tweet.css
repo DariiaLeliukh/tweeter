@@ -73,3 +73,9 @@
   cursor: pointer;
   color: #d69521;
 }
+
+@media (min-width:1024px) {
+  .all-tweets {
+    margin: 170px 50px 50px;
+  }
+}

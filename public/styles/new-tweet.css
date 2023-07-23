@@ -2,6 +2,14 @@
   Styles for new tweet form
 */
 
+.new-tweet {
+  display: none;
+}
+
+.new-tweet.visible {
+  display: block;
+}
+
 .new-tweet form textarea {
   width: 100%;
   background: transparent;
@@ -9,6 +17,10 @@
   border-bottom: 2px solid;
   resize: vertical;
   padding-top: 10px;
+}
+
+.new-tweet form textarea:focus-visible {
+  outline: none;
 }
 
 .new-tweet form .form-footer {
@@ -32,4 +44,9 @@
 
 .new-tweet form .counter.negative {
   color: red;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
 }
