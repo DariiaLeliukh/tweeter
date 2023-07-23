@@ -17,10 +17,10 @@
 
 @media (min-width:1024px) {
   .main-header {
-    width: calc(50% - 100px);
+    width: 50%;
     float: left;
     display: block;
-    margin: 170px 50px 50px;
+    margin: 170px 0 50px;
   }
 
   .profile-photo-container,

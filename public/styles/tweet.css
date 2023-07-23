@@ -3,7 +3,7 @@
 */
 
 .all-tweets {
-  margin: 50px 0;
+  margin: 50px 15px;
 }
 
 .tweet {
@@ -25,10 +25,11 @@
   padding: 10px 20px;
   background: transparent;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   color: #000;
   padding: 0;
+  gap: 15px;
 }
 
 .tweet header .photo-name {
@@ -74,8 +75,19 @@
   color: #d69521;
 }
 
+@media (min-width: 576px) {
+  .tweet header {
+    flex-direction: row;
+  }
+}
+
 @media (min-width:1024px) {
   .all-tweets {
-    margin: 170px 50px 50px;
+    margin: 170px 0 50px;
+  }
+
+  .all-tweets .tweet {
+    margin-top: 0;
+    margin-bottom: 30px;
   }
 }

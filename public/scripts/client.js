@@ -4,12 +4,19 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+/*
+  Clean up the content output
+*/
 const escapeF = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+/*
+  Creates an article element with the tweeter data provided
+  Returns string with all the HTML for one tweeter post
+*/
 function createTweetElement(data) {
   const $tweet = $(`<article class="tweet">
   <header>
@@ -42,11 +49,13 @@ function createTweetElement(data) {
   return $tweet;
 }
 
+/*
+  Render all the tweets 
+    loops through tweets
+    alls createTweetElement for each tweet
+    takes return value and appends it to the tweets container
+*/
 const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-
   $('.all-tweets').empty();
   tweets.reverse().forEach(element => {
     const $tweet = createTweetElement(element);
@@ -54,6 +63,9 @@ const renderTweets = function(tweets) {
   });
 };
 
+/*
+  Load all the tweets from the file we have and newly added posts
+*/
 const loadTweets = () => {
   $.ajax({
     url: "/tweets",
@@ -68,6 +80,9 @@ const loadTweets = () => {
   });
 };
 
+/*
+  Clear text from the text area when tweeter post is created
+*/
 const clearNewTweetText = function() {
   let textArea = $("#createNewTweet textarea");
   const counter = textArea.closest('form').children().find('.counter');
@@ -77,17 +92,19 @@ const clearNewTweetText = function() {
 
 }
 
+/*
+  Function to post a tweeter
+  If the post is too short or too long, then it is not posted and error message is output
+  Otherwise the tweeted is added
+*/
 const postTweet = function() {
 
   let input = $("#createNewTweet textarea")[0].value;
 
   if (input.length > 140) {
-    //$("<p>Too long</p>").prependTo("#createNewTweet .form-footer");
     $('#createNewTweet .error')[0].innerText = "The tweet can not be more that 140 characters";
   } else if (input.length === 0) {
-    //$("<p>Too short</p>").prependTo("createNewTweet .form-footer");
     $('#createNewTweet .error')[0].innerText = "The tweet can not be empty";
-    //alert("Too short");
   } else {
     $('#createNewTweet .error')[0].innerText = '';
     const data = $("#createNewTweet").serialize();
@@ -101,6 +118,10 @@ const postTweet = function() {
 
 
 }
+
+/*
+  Main functionality
+*/
 
 $(document).ready(function() {
   loadTweets();

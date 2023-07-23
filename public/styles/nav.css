@@ -6,12 +6,17 @@ nav {
   height: 120px;
   background: transparent;
   color: #ffffff;
-  padding: 0 1.5em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  flex-direction: column;
+  padding: 15px;
+}
+
+nav.scrolled {
+  background: #4056a1;
 }
 
 nav span {
@@ -69,6 +74,14 @@ nav .new-tweet-control p {
 
 nav .new-tweet-control i {
   color: red;
+}
+
+@media (min-width: 576px) {
+  nav {
+    flex-direction: row;
+    padding: 0 1.5em;
+  }
+
 }
 
 @media (min-width:1024px) {

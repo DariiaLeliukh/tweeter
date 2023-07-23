@@ -29,14 +29,24 @@ body {
  */
 
 main {
-  width: 90%;
-  margin: 50px auto 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width:1024px) {
   main {
-    width: 50%;
-    float: left;
     margin-top: 0;
+    flex-direction: row;
+    gap: 100px;
+    padding: 0 1.5em;
+  }
+}
+
+@media (min-width:1440px) {
+  main {
+    max-width: 1368px;
+    padding: 0;
   }
 }

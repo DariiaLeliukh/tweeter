@@ -35,6 +35,7 @@
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/new-tweet-button.js"></script>
+  <script type="text/javascript" src="/scripts/nav-scroll.js"></script>
 </head>
 
 <body>
@@ -49,18 +50,18 @@
     </div>
   </nav>
 
-  <header class="main-header">
-    <div class="profile-photo-container">
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div class="profile-name-container">
-      <h2>Dariia</h2>
-    </div>
-  </header>
-
   <!-- Page-specific (main) content here -->
   <main class="container">
+
+    <header class="main-header">
+      <div class="profile-photo-container">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class="profile-name-container">
+        <h2>Dariia</h2>
+      </div>
+    </header>
     <section class="new-tweet">
       <form action="/tweets/" method="post" id="createNewTweet">
         <label>What are you humming about?</label>

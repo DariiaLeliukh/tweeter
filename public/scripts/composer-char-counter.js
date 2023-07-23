@@ -1,3 +1,6 @@
+/*
+  Script to decrease or increase the counter when the textarea with tweet is input
+*/
 $(document).ready(function() {
   const newTweetTextArea = $('#tweet-text');
 
