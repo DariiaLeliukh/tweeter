@@ -15,10 +15,11 @@
   color: #fff;
 
   @media (min-width:1024px) {
-    max-width: 500px;
-    float: left;
+    flex: 0 0 auto;
     display: block;
     margin: 170px 0 50px;
+    width: 41.666666667%;
+    margin-right: 8.33333333%;
 
     .profile-photo-container,
     .profile-name-container {

@@ -99,7 +99,7 @@ const clearNewTweetText = function() {
 */
 const postTweet = function() {
 
-  let input = $("#createNewTweet textarea")[0].value;
+  let input = $("#createNewTweet textarea")[0].value.trim();
 
   if (input.length > 140) {
     $('#createNewTweet .error')[0].innerText = "The tweet can not be more that 140 characters";

@@ -16,8 +16,9 @@
       background: transparent;
       border: 0;
       border-bottom: 2px solid;
-      resize: vertical;
+      resize: none;
       padding-top: 10px;
+      height: 3em;
 
       &:focus-visible {
         outline: none;

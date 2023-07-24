@@ -13,8 +13,9 @@
   background: transparent;
   border: 0;
   border-bottom: 2px solid;
-  resize: vertical;
+  resize: none;
   padding-top: 10px;
+  height: 3em;
 }
 .new-tweet form textarea:focus-visible {
   outline: none;

@@ -36,7 +36,6 @@ main {
   main {
     margin-top: 0;
     flex-direction: row;
-    gap: 100px;
     padding: 0 1.5em;
   }
 }

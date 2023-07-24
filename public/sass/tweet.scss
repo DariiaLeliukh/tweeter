@@ -3,8 +3,12 @@
 */
 
 .tweet-container {
+  width: 100%;
+
   @media (min-width:1024px) {
     margin: 170px 0 50px;
+    flex: 0 0 auto;
+    width: 50%;
   }
 }
 
@@ -70,6 +74,7 @@
 
   .body {
     overflow: hidden;
+    word-wrap: break-word;
   }
 
   footer {
