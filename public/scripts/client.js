@@ -112,6 +112,12 @@ const postTweet = function() {
     $.post("/tweets", data)
       .then(() => {
         clearNewTweetText();
+      })
+      .catch((error) => {
+        $('#createNewTweet .error')[0].innerText = "Something went wrong, please try again later";
+        console.log(error);
+      })
+      .done(() => {
         loadTweets();
       });
   }
